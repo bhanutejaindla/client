@@ -50,7 +50,7 @@ const CreateEmployee = () => {
     formData.append("createDate", newEmployee.createDate);
 
     try {
-      const response = await fetch("http://localhost:3001/createEmployee", {
+      const response = await fetch("https://admin-server-8syd.onrender.com/createEmployee", {
         method: "POST",
         body: formData,
       });
