@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Login from './components/Login/Login.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
+import EmployeeList from './components/EmployeeList/EmployeeList.jsx';
+import CreateEmployee from './components/CreateEmployee/CreateEmployee.jsx';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+            <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/home" element={<Dashboard />} />
+                <Route path="/employees" element={<EmployeeList/>} />
+                <Route path='/create-employee' element={<CreateEmployee/>} />
+            </Routes>
+        </Router>
   );
 }
 
